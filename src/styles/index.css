@@ -1,0 +1,75 @@
+body {
+    color:rgb(19, 26, 47);
+    background-color: rgb(235, 165, 214);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+main {
+  min-height: 100vh;
+  padding: 24px;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  min-height: 44px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.glass-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.glass {
+  width: 160px;
+  height: 220px;
+  overflow: hidden;
+  border: 3px solid #111;
+  display: flex;
+  flex-direction: column-reverse;
+  background: white;
+}
+
+.developer .glass {
+  border-radius: 0 0 24px 24px;
+}
+
+.designer .glass {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.layer {
+  flex: 1;
+}
+
+.stem {
+  width: 6px;
+  height: 70px;
+  background: #111;
+}
+
+.base {
+  width: 90px;
+  height: 8px;
+  background: #111;
+  border-radius: 999px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+
