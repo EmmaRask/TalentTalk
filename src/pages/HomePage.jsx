@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>{text.home.title}</h1>
-      <p>{text.home.subttitle}</p>
+      <p>{text.home.subtitle}</p>
 
       <button onClick={() => handleSelect('student')}>
         {text.role.student}

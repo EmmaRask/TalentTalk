@@ -46,10 +46,18 @@ main {
 
 .skill-button:hover {
   transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 .skill-button.selected {
   font-weight: 600;
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .selected-colors-preview {

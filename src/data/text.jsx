@@ -1,7 +1,7 @@
 export const text = {
   home: {
     title: "TalentTalk",
-    subtitle: "Choose who you are to start mingling",
+    subtitle: "Who are you?",
   },
 
   role: {
@@ -14,15 +14,15 @@ export const text = {
     subtitle: "Choose one area to continue",
   },
   builder: {
-    student: "What are your skills?",
-    company: "Which skillset are you looking for?",
+    student: "Pick your ingredients",
+    company: "Pick your ingredients",
     subtitle: "Select 3 skillsets",
-    create: "Create your mocktail",
+    create: "Mix my mocktail",
   },
   result: {
-    title: "Your mocktail",
-    instruction: "Now start mingling.",
-    question: "What colors are in your drink?",
+    title: "Your digital mocktail",
+    instruction: "Find people with matching colors, you share skills!",
+    question: "Need an ice breaker? Ask what colors are in other peoples drink and start to connect",
     reset: "Create another mocktail",
   },
 };
