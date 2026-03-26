@@ -25,6 +25,8 @@ export default function ResultPage() {
         navigate("/roll");
     }
 
+    const imageSrc = "/media/mocktailDesigner1.png";
+
     return (
     <main>
         <h1>{text.result.title}</h1>
@@ -37,24 +39,18 @@ export default function ResultPage() {
             <strong>Track:</strong> {track}
         </p>
 
-        {/*{/imageSrc ? (
-            <img src={imageSrc} alt="Your mocktail preview" className="mocktail-image" />
+        {imageSrc ? (
+        <img
+            src={imageSrc}
+            alt="Your mocktail preview"
+            className="mocktail-image"
+        />
             ) : (
             <MocktailGlass skills={selectedSkillObjects} track={track} />
-        )}*/}
-        {/*<div style={{ border: "2px solid red", padding: "20px" }}>
-        <p>Video test</p>
-        <video
-        src="/meedia/IMG_9630.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ width: "200px" }}
-        />
-        /</div>*/}
-
-      <MocktailGlass skills={selectedSkillObjects} track={track} />
+        )}
+    
+    
+      {/*<MocktailGlass skills={selectedSkillObjects} track={track} />*/}
         <div>
             <h2>Your selected skillsets:</h2>
             <ul>
