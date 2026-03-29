@@ -2,6 +2,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { skillsByTrack } from "../data/skills";
 import { text } from "../data/text";
+import DrinkGlass from "../components/DrinkGlass";
 import MocktailGlass from "../components/MocktailGlass";
 
 export default function ResultPage() {
@@ -25,7 +26,6 @@ export default function ResultPage() {
         navigate("/roll");
     }
 
-    const imageSrc = "/media/mocktailDesigner1.png";
 
     return (
     <main>
@@ -39,16 +39,8 @@ export default function ResultPage() {
             <strong>Track:</strong> {track}
         </p>
 
-        {imageSrc ? (
-        <img
-            src={imageSrc}
-            alt="Your mocktail preview"
-            className="mocktail-image"
-        />
-            ) : (
-            <MocktailGlass skills={selectedSkillObjects} track={track} />
-        )}
-    
+        
+        <DrinkGlass skills={selectedSkillObjects} track={track} />
     
       {/*<MocktailGlass skills={selectedSkillObjects} track={track} />*/}
         <div>

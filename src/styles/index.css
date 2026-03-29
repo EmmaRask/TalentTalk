@@ -92,6 +92,48 @@ button {
   cursor: pointer;
 }
 
+.drink-glass {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  margin: 16px auto;
+}
+
+.drink-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.drink-liquid {
+  position: absolute;
+  z-index: 1;
+}
+
+.drink-glass.designer .drink-liquid {
+  left: 25px;
+  top: 52px;
+  width: 167px;
+  height: 94px;
+  clip-path: polygon(-1% 0%, 103% 0%, 56% 100%, 44% 101%);
+  opacity: 0.95;
+  filter: saturate(1.05);
+}
+
+.drink-glass.developer .drink-liquid {
+  left: 15px;
+  top: 112px;
+  width: 189px;
+  height: 119px;
+  border-radius: 0 0 29px 34px;
+  opacity: 0.9;
+  filter: saturate(1.05);
+}
+
 .glass-wrapper {
   display: flex;
   flex-direction: column;
