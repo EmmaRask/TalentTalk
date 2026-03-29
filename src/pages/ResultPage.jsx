@@ -4,6 +4,7 @@ import { skillsByTrack } from "../data/skills";
 import { text } from "../data/text";
 import DrinkGlass from "../components/DrinkGlass";
 import MocktailGlass from "../components/MocktailGlass";
+import AppLayout from "../components/AppLayout";
 
 export default function ResultPage() {
     const navigate = useNavigate();
@@ -28,6 +29,7 @@ export default function ResultPage() {
 
 
     return (
+    <AppLayout>
     <main>
         <h1>{text.result.title}</h1>
 
@@ -59,5 +61,6 @@ export default function ResultPage() {
 
         <button onClick={handleReset}>{text.result.reset}</button>
     </main>
+    </AppLayout>
   );
 }

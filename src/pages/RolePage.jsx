@@ -2,6 +2,7 @@
 import { useNavigate, Navigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { text } from "../data/text";
+import AppLayout from "../components/AppLayout";
 
 export default function RolePage() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function RolePage() {
   }
 
   return (
+    <AppLayout>
     <main>
         <h1>{heading}</h1>
       <p>{text.role.subtitle}:</p>
@@ -34,6 +36,7 @@ export default function RolePage() {
         {text.role.designer}
       </button>
     </main>
+    </AppLayout>
   );
 }
 

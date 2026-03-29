@@ -2,6 +2,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { skillsByTrack } from "../data/skills";
 import { text } from "../data/text";
+import AppLayout from "../components/AppLayout";
 
 export default function BuilderPage() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ export default function BuilderPage() {
   }
 
   return (
+    <AppLayout>
     <main>
       <h1>{heading}</h1>
       <p>
@@ -85,5 +87,6 @@ export default function BuilderPage() {
         {text.builder.create}
       </button>
     </main>
+    </AppLayout>
   );
 }
