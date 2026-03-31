@@ -23,7 +23,7 @@ export const text = {
     title: "Your Digital Mocktail",
     drinkBlend: {
       developer: "Developers Blend",
-      designer: "designers Mix",
+      designer: "Designers Mix",
     },
     instruction: "Find people with matching colors, you share skills!",
     question: "Need an ice breaker? Ask what colors are in other peoples drink and start to connect",
