@@ -13,7 +13,6 @@ export function MingelProvider({ children }) {
     setSelectedSkills([]);
   }
 
-
   function chooseTrack(nextTrack) {
     setTrack(nextTrack);
     setSelectedSkills([]);

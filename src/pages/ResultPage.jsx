@@ -6,6 +6,11 @@ import DrinkGlass from "../components/DrinkGlass";
 import MocktailGlass from "../components/MocktailGlass";
 import AppLayout from "../components/AppLayout";
 
+function getButtonTextColor(backgroundColor) {
+    const lightColors = ["#FFD500", "#FFB300"];
+    return lightColors.includes(backgroundColor) ? "#1b1b1b" : "#ffffff";
+  }
+
 export default function ResultPage() {
     const navigate = useNavigate();
     const { userType, track, selectedSkills, restartFromRole } = useMingel();
@@ -30,16 +35,17 @@ export default function ResultPage() {
 
     return (
     <AppLayout>
+    <div className="result-page">
     <main>
         <h1>{text.result.title}</h1>
 
-        <p>
+        {/*<p>
             <strong>User type:</strong> {userType}
         </p>
 
         <p>
             <strong>Track:</strong> {track}
-        </p>
+        </p>/*/}
 
         
         <DrinkGlass skills={selectedSkillObjects} track={track} />
@@ -47,20 +53,30 @@ export default function ResultPage() {
       {/*<MocktailGlass skills={selectedSkillObjects} track={track} />*/}
         <div>
             <h2>Your selected skillsets:</h2>
-            <ul>
+            <div className="skills-grid">
                 {selectedSkillObjects.map((skill) => (
-                <li key={skill.id}>{skill.label}</li>
+                <button class="skill-button selected"style={{
+                    backgroundColor: skill.color,
+                    color: getButtonTextColor(skill.color),
+                    borderColor: skill.color,
+                }}> 
+                    {skill.label}</button>
                 ))}
-            </ul>
+            </div>
         </div>
 
+        <p>
+            <strong>{text.result.drinkBlend[track]}</strong>
+
+        </p>
         <p>{text.result.instruction}</p>
             <p>
             <strong>{text.result.question}</strong>
         </p>
 
-        <button onClick={handleReset}>{text.result.reset}</button>
+        <button className="primary-button"onClick={handleReset}>{text.result.reset}</button>
     </main>
+    </div>
     </AppLayout>
   );
 }
