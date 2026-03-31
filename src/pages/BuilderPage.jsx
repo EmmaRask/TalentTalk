@@ -81,6 +81,7 @@ export default function BuilderPage() {
       </div>
 
       <button
+        className="primary-button"
         onClick={handleCreateMocktail}
         disabled={selectedSkills.length !== 3}
       >
