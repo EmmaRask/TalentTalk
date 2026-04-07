@@ -55,7 +55,7 @@ export default function ResultPage() {
             <h2>Your selected skillsets:</h2>
             <div className="skills-grid">
                 {selectedSkillObjects.map((skill) => (
-                <button class="skill-button selected"style={{
+                <button key={skill.id} className="skill-button selected"style={{
                     backgroundColor: skill.color,
                     color: getButtonTextColor(skill.color),
                     borderColor: skill.color,
