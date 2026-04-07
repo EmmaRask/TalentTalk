@@ -133,7 +133,23 @@ button {
   position: relative;
   width: 220px;
   height: 320px;
-  margin: 16px auto;
+  margin: 10px auto;
+}
+
+.drink-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.drink-liquid {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .drink-overlay {
@@ -143,13 +159,9 @@ button {
   height: 100%;
   object-fit: contain;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
-.drink-liquid {
-  position: absolute;
-  z-index: 1;
-}
 
 .drink-glass.designer .drink-liquid {
   left: 25px;
@@ -164,12 +176,65 @@ button {
 .drink-glass.developer .drink-liquid {
   left: 15px;
   top: 112px;
-  width: 189px;
-  height: 119px;
-  border-radius: 0 0 29px 34px;
-  opacity: 0.9;
+  width: 181px;
+  height: 115px;
   filter: saturate(1.05);
 }
+
+.drink-liquid-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Vätskans yta */
+.drink-surface {
+  position: absolute;
+  z-index: 3;
+  left: 2px;
+  top: 107px;
+  width: 219px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* Isen ska INTE täcka hela glaset */
+.drink-ice {
+  position: absolute;
+  z-index: 4;
+  left: 29px;
+  top: 65px;
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 1.85;
+}
+
+.drink-tint-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.drink-highlight-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  pointer-events: none;
+}
+
 
 .glass-wrapper {
   display: flex;
