@@ -31,11 +31,11 @@ export default function DrinkGlass({ skills, track }) {
 
   const designerLiquidPath = `
     M 30 70
-    Q 29 67 69 67
-    L 145 67
-    Q 179 69 183 76
-    L 117 165
-    Q 121 160 100 158
+    Q 37 67 69 69
+    L 184 69
+    Q 189 69 183 76
+    L 120 162
+    Q 105 171 98 158
     Q 94 157 85 146
     Z
     `;
@@ -144,14 +144,14 @@ export default function DrinkGlass({ skills, track }) {
         />
 
         {/* vätskans yta */}
-        <ellipse
+       {/* <ellipse
           cx="105"
           cy="74"
           rx="82"
           ry="7"
           fill={colors[2] || "#a6a6a6"}
           opacity="0.9"
-        />
+        />*/}
       </svg>
 
       <img
@@ -167,6 +167,23 @@ export default function DrinkGlass({ skills, track }) {
         className="drink-surface-designer"
         aria-hidden="true"
       />
+
+      <svg className="drink-highlight-designer.svg" viewBox="0 0 220 320" aria-hidden="true">
+          <path
+            d="
+              M 25 118
+              Q 32 110 100 113
+              L 76 112
+              Q 45 155 56 215
+              Q 42 225 30 149
+              Z
+            "
+            fill="white"
+            opacity="0.40"
+          />
+        </svg>
+
+      
     </div>
   );
 }

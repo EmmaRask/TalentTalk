@@ -203,6 +203,19 @@ button {
   opacity: 0.95;
 }
 
+.drink-surface-designer {
+  position: absolute;
+  z-index: 3;
+  left: 23px;
+  top: 66px;
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+
 /* Isen ska INTE täcka hela glaset */
 .drink-ice {
   position: absolute;
@@ -232,6 +245,16 @@ button {
   width: 100%;
   height: 100%;
   z-index: 6;
+  pointer-events: none;
+}
+
+.drink-highlight-designer-svg {
+  position: absolute;
+  left: 50px;
+  top: 6px;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
   pointer-events: none;
 }
 
