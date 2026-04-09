@@ -1,7 +1,7 @@
-
 import { useNavigate, Navigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { text } from "../data/text";
+import RoleButton from "../components/RoleButton";
 
 export default function RolePage() {
   const navigate = useNavigate();
@@ -26,13 +26,13 @@ export default function RolePage() {
         <h1>{heading}</h1>
       <p>{text.role.subtitle}:</p>
 
-      <button onClick={() => handleSelect("developer")}>
-        {text.role.developer}
-      </button>
-
-      <button onClick={() => handleSelect("designer")}>
-        {text.role.designer}
-      </button>
+      <RoleButton onSelect={handleSelect} value="developer">
+              {text.role.developer}
+            </RoleButton>
+      
+           <RoleButton onSelect={handleSelect} value="designer">
+              {text.role.designer}
+            </RoleButton>
     </main>
   );
 }

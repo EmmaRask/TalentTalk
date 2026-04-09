@@ -1,8 +1,7 @@
-export default function CompanyButton ( {onSelect, value, content} ){
-return (
-        <button onClick={() => onSelect(value)}>
-                {content}
-              </button>
-
-     )
+export default function RoleButton({ onSelect, value, children }) {
+  return (
+    <button onClick={() => onSelect(value)}>
+      {children}
+    </button>
+  );
 }
