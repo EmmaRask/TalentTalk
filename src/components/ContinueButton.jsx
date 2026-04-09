@@ -5,14 +5,16 @@ export default function ContinueButton({ disabled, onContinue }) {
       disabled={disabled}
       style={{
         marginTop: "20px",
-        padding: "12px 20px",
-        background: disabled ? "#ccc" : "#4A90E2",
+        marginLeft:"1rem",
+        padding: "16px",
+        background: disabled ? "#ccc" : "#E51236",
         color: "white",
-        border: "none",
-        borderRadius: "6px",
+        borderRadius: "24px",
+        width:"309px",
         cursor: disabled ? "not-allowed" : "pointer",
       }}
     >
+
       Continue
     </button>
   );
