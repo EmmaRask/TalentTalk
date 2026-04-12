@@ -1,82 +1,112 @@
 import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useMingel } from "../context/MingelContext";
 import { skillsByTrack } from "../data/skills";
 import { text } from "../data/text";
 import DrinkGlass from "../components/DrinkGlass";
-import MocktailGlass from "../components/MocktailGlass";
 import AppLayout from "../components/AppLayout";
+import SavePersonForm from "../components/SavePersonForm";
+import { addDrinkbookEntry } from "../utils/drinkbookStorage";
 
 function getButtonTextColor(backgroundColor) {
-    const lightColors = ["#FFD500", "#FFB300"];
-    return lightColors.includes(backgroundColor) ? "#1b1b1b" : "#ffffff";
-  }
+  const lightColors = ["#FFD500", "#FFB300"];
+  return lightColors.includes(backgroundColor) ? "#1b1b1b" : "#ffffff";
+}
 
 export default function ResultPage() {
-    const navigate = useNavigate();
-    const { userType, track, selectedSkills, restartFromRole } = useMingel();
+  const navigate = useNavigate();
+  const { userType, track, selectedSkills, restartFromRole } = useMingel();
 
-    if (!userType) {
-        return <Navigate to="/" replace />;
-    }
+  const [showSaveForm, setShowSaveForm] = useState(false);
+  const [saveMessage, setSaveMessage] = useState("");
 
-    if (!track || selectedSkills.length !== 3) {
-        return <Navigate to="/bygg" replace />;
-    }
+  if (!userType) {
+    return <Navigate to="/" replace />;
+  }
 
-    const selectedSkillObjects = skillsByTrack[track].filter((skill) =>
-        selectedSkills.includes(skill.id)
-    );
+  if (!track || selectedSkills.length !== 3) {
+    return <Navigate to="/bygg" replace />;
+  }
 
-    function handleReset() {
-        restartFromRole();
-        navigate("/roll");
-    }
+  const selectedSkillObjects = skillsByTrack[track].filter((skill) =>
+    selectedSkills.includes(skill.id)
+  );
 
+  function handleSavePerson(formData) {
+    const newEntry = {
+      id: crypto.randomUUID(),
+      nickname: formData.nickname,
+      note: formData.note,
+      track,
+      skills: selectedSkills,
+      createdAt: new Date().toISOString(),
+    };
 
-    return (
+    addDrinkbookEntry(newEntry);
+    setShowSaveForm(false);
+    setSaveMessage("Saved to Drinkbook.");
+  }
+
+  function handleReset() {
+    restartFromRole();
+    navigate("/roll");
+  }
+
+  return (
     <AppLayout>
-    <div className="result-page">
-    <main>
-        <h1>{text.result.title}</h1>
+      <div className="result-page">
+        <main>
+          <h1>{text.result.title}</h1>
 
-        {/*<p>
-            <strong>User type:</strong> {userType}
-        </p>
+          <DrinkGlass skills={selectedSkillObjects} track={track} />
 
-        <p>
-            <strong>Track:</strong> {track}
-        </p>/*/}
-
-        
-        <DrinkGlass skills={selectedSkillObjects} track={track} />
-    
-      {/*<MocktailGlass skills={selectedSkillObjects} track={track} />*/}
-        <div>
+          <div>
             <h2>Your selected skillsets:</h2>
             <div className="skills-grid">
-                {selectedSkillObjects.map((skill) => (
-                <button key={skill.id} className="skill-button selected"style={{
+              {selectedSkillObjects.map((skill) => (
+                <button
+                  key={skill.id}
+                  className="skill-button selected"
+                  style={{
                     backgroundColor: skill.color,
                     color: getButtonTextColor(skill.color),
                     borderColor: skill.color,
-                }}> 
-                    {skill.label}</button>
-                ))}
+                  }}
+                >
+                  {skill.label}
+                </button>
+              ))}
             </div>
-        </div>
+          </div>
 
-        <p>
+          <p>
             <strong>{text.result.drinkBlend[track]}</strong>
+          </p>
 
-        </p>
-        <p>{text.result.instruction}</p>
-            <p>
+          <p>{text.result.instruction}</p>
+
+          <p>
             <strong>{text.result.question}</strong>
-        </p>
+          </p>
 
-        <button className="primary-button"onClick={handleReset}>{text.result.reset}</button>
-    </main>
-    </div>
+          {!showSaveForm ? (
+            <button onClick={() => setShowSaveForm(true)}>
+              Save to Drinkbook
+            </button>
+          ) : (
+            <SavePersonForm
+              onSave={handleSavePerson}
+              onCancel={() => setShowSaveForm(false)}
+            />
+          )}
+
+          {saveMessage && <p>{saveMessage}</p>}
+
+          <button className="primary-button" onClick={handleReset}>
+            {text.result.reset}
+          </button>
+        </main>
+      </div>
     </AppLayout>
   );
 }
