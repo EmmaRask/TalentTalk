@@ -2,7 +2,14 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { skillsByTrack } from "../data/skills";
 import { text } from "../data/text";
+import DrinkGlass from "../components/DrinkGlass";
 import MocktailGlass from "../components/MocktailGlass";
+import AppLayout from "../components/AppLayout";
+
+function getButtonTextColor(backgroundColor) {
+    const lightColors = ["#FFD500", "#FFB300"];
+    return lightColors.includes(backgroundColor) ? "#1b1b1b" : "#ffffff";
+  }
 
 export default function ResultPage() {
     const navigate = useNavigate();
@@ -25,51 +32,51 @@ export default function ResultPage() {
         navigate("/roll");
     }
 
+
     return (
+    <AppLayout>
+    <div className="result-page">
     <main>
         <h1>{text.result.title}</h1>
 
-        <p>
+        {/*<p>
             <strong>User type:</strong> {userType}
         </p>
 
         <p>
             <strong>Track:</strong> {track}
-        </p>
+        </p>/*/}
 
-        {/*{/imageSrc ? (
-            <img src={imageSrc} alt="Your mocktail preview" className="mocktail-image" />
-            ) : (
-            <MocktailGlass skills={selectedSkillObjects} track={track} />
-        )}*/}
-        {/*<div style={{ border: "2px solid red", padding: "20px" }}>
-        <p>Video test</p>
-        <video
-        src="/meedia/IMG_9630.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ width: "200px" }}
-        />
-        /</div>*/}
-
-      <MocktailGlass skills={selectedSkillObjects} track={track} />
+        
+        <DrinkGlass skills={selectedSkillObjects} track={track} />
+    
+      {/*<MocktailGlass skills={selectedSkillObjects} track={track} />*/}
         <div>
             <h2>Your selected skillsets:</h2>
-            <ul>
+            <div className="skills-grid">
                 {selectedSkillObjects.map((skill) => (
-                <li key={skill.id}>{skill.label}</li>
+                <button key={skill.id} className="skill-button selected"style={{
+                    backgroundColor: skill.color,
+                    color: getButtonTextColor(skill.color),
+                    borderColor: skill.color,
+                }}> 
+                    {skill.label}</button>
                 ))}
-            </ul>
+            </div>
         </div>
 
+        <p>
+            <strong>{text.result.drinkBlend[track]}</strong>
+
+        </p>
         <p>{text.result.instruction}</p>
             <p>
             <strong>{text.result.question}</strong>
         </p>
 
-        <button onClick={handleReset}>{text.result.reset}</button>
+        <button className="primary-button"onClick={handleReset}>{text.result.reset}</button>
     </main>
+    </div>
+    </AppLayout>
   );
 }

@@ -20,7 +20,11 @@ export const text = {
     create: "Mix my mocktail",
   },
   result: {
-    title: "Your digital mocktail",
+    title: "Your Digital Mocktail",
+    drinkBlend: {
+      developer: "Developers Blend",
+      designer: "Designers Mix",
+    },
     instruction: "Find people with matching colors, you share skills!",
     question: "Need an ice breaker? Ask what colors are in other peoples drink and start to connect",
     reset: "Create another mocktail",
