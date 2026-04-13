@@ -3,7 +3,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { text } from "../data/text";
 import AppLayout from "../components/AppLayout";
-
+ 
 export default function RolePage() {
   const navigate = useNavigate();
   const { userType, chooseTrack } = useMingel();

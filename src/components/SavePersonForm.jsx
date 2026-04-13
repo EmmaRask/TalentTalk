@@ -1,6 +1,5 @@
+
 import { useState } from "react";
-
-
 
 export default function SavePersonForm({ onSave, onCancel }) {
   const [nickname, setNickname] = useState("");
@@ -22,13 +21,15 @@ export default function SavePersonForm({ onSave, onCancel }) {
 
   return (
     <form onSubmit={handleSubmit} className="save-person-form">
+        <h2>Save to Drinkbook</h2>
+
       <label>
         Nickname
         <input
           type="text"
           value={nickname}
           onChange={(event) => setNickname(event.target.value)}
-          placeholder="Linda with green glasses"
+          placeholder="Write nickname or characteristic"
         />
       </label>
 
@@ -37,14 +38,14 @@ export default function SavePersonForm({ onSave, onCancel }) {
         <textarea
           value={note}
           onChange={(event) => setNote(event.target.value)}
-          placeholder="Met at the event, interested in React"
+          placeholder="LinkedIn name, company, reminder"
           rows={3}
         />
       </label>
 
       <div className="save-person-actions">
         <button type="submit" className="primary-button">
-          Save to Drinkbook
+          Save
         </button>
 
         <button type="button" onClick={onCancel}>

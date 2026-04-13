@@ -21,8 +21,16 @@ export default function AppLayout({ children }) {
     <main className="page-layout">
       <header className="page-header">
         <Logo />
-        <button onClick={() => setIsDrinkbookOpen(true)}>
-          Drinkbook
+        <button
+          className="drinkbook-button"
+          onClick={() => setIsDrinkbookOpen(true)}
+          >
+          🍸📖 
+          <p>
+            <small>
+              Drinkbook
+            </small>
+          </p>
         </button>
       </header>
 

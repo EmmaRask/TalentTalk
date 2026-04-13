@@ -5,6 +5,14 @@ body {
     font-family: Arial, sans-serif;
     
 }
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 main {
   min-height: 100vh;
   padding: 16px;
@@ -28,15 +36,16 @@ main {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  width: 100%;
   max-width: 320px;
-  margin: 0 auto;
 }
 
 .skill-button {
     margin-top: 16px;
     width: 100%;
+    min-height: 52p;
     height: 44px;
     border:2px solid;
     border-radius: 999px;
@@ -44,11 +53,13 @@ main {
 
     font-size: 0.95rem;
     font-weight: 500;
-
+    line-height: 1.2;
+    text-align: center;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-
+  
     cursor: pointer;
     transform: all 0.2s ease;
 
@@ -343,4 +354,91 @@ ul {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 12px;
+}
+
+.drinkbook-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  padding: 1px 12px;
+  border-radius: 9px;
+  border: 2px solid rgb(0, 26, 82);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+}
+
+.drinkbook-button:hover {
+  background: rgb(0, 26, 82);
+  color: white;
+}
+
+/*popup/modal*/
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.save-modal {
+  width: 100%;
+  max-width: 360px;
+  background: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.save-person-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.save-person-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.save-person-form input,
+.save-person-form textarea {
+  width: 100%;
+  border: 1px solid #cfcfcf;
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+  background: white;
+}
+
+.save-person-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-message {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: #f5f5f5;
+  color: #121212;
+  border: 1px solid #d8d8d8;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 2100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
