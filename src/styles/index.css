@@ -13,6 +13,10 @@ body {
   margin-top: 10px;
 }
 
+.page-content {
+  margin-top: 45px; 
+}
+
 main {
   min-height: 100vh;
   padding: 16px;
@@ -55,7 +59,7 @@ main {
     font-weight: 500;
     line-height: 1.2;
     text-align: center;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +100,35 @@ main {
   display: inline-block;
 }
 
+.builder-cta {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.selected-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.selected-skills-list .skill-button {
+  width: auto;
+  min-width: 88px;
+  max-width: 100%;
+  padding: 10px 16px;
+}
+
+.result-title {
+  margin: 0;
+}
+
+.result-blend {
+  margin: 0;
+}
 .mocktail-image {
   width: 100%;
   max-width: 140px;
@@ -441,4 +474,16 @@ ul {
   font-weight: 500;
   z-index: 2100;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.glass {
+  /* Property 1=card, Property 2=developer drink */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 16px;
+top: 82px;
+
+
 }

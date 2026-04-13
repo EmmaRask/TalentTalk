@@ -18,7 +18,7 @@ export const skillsByTrack = {
     { id: "illustrator", label: "Illustrator", color: "#00C7B6" },
     { id: "indesign", label: "InDesign", color: "#00B7DC" },
     { id: "branding", label: "Branding", color: "#FFB300" },
-    { id: "sql", label: "AI Implementation", color: "#7D00BE" },
+    { id: "sql", label: "AI Impl.", color: "#7D00BE" },
     { id: "motion", label: "Motion", color: "#FF0086" },
   ],
 };

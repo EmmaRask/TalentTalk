@@ -64,13 +64,16 @@ export default function ResultPage() {
     <AppLayout>
       <div className="result-page">
         <main>
-          <h1>{text.result.title}</h1>
-
+          <h1 className="result-title">{text.result.title}</h1>
+            <p className="result-blend">
+            <strong>{text.result.drinkBlend[track]}</strong>
+            </p>
+    
           <DrinkGlass skills={selectedSkillObjects} track={track} />
 
           <div>
             <h2>Your selected skillsets:</h2>
-            <div className="skills-grid">
+            <div className="selected-skills-list">
               {selectedSkillObjects.map((skill) => (
                 <button
                   key={skill.id}
@@ -86,16 +89,8 @@ export default function ResultPage() {
               ))}
             </div>
           </div>
-
-          <p>
-            <strong>{text.result.drinkBlend[track]}</strong>
-          </p>
-
+          <p><strong>{text.result.question}</strong></p>
           <p>{text.result.instruction}</p>
-
-          <p>
-            <strong>{text.result.question}</strong>
-          </p>
 
           {!hasSavedToDrinkbook && (
             <button onClick={() => setShowSaveModal(true)}>

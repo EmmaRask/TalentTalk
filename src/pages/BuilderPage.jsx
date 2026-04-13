@@ -79,14 +79,15 @@ export default function BuilderPage() {
           );
         })}
       </div>
-
-      <button
-        className="primary-button"
-        onClick={handleCreateMocktail}
-        disabled={selectedSkills.length !== 3}
-      >
-        {text.builder.create}
-      </button>
+      <div className="builder-cta">
+        <button
+          className="primary-button"
+          onClick={handleCreateMocktail}
+          disabled={selectedSkills.length !== 3}
+        >
+          {text.builder.create}
+        </button>
+      </div>
     </main>
     </AppLayout>
   );
