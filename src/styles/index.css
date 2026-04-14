@@ -517,7 +517,7 @@ ul {
 }
 
 .drinkbook-card {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(0, 26, 82);
   border-radius: 12px;
   padding: 12px;
 }
@@ -713,12 +713,12 @@ ul {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.devicon {
-  /*devicon*/
+/* .devicon {
+  /*devicon
 
 position: absolute;
 width: 40px;
 height: 40px;
 left: 16px;
 top: 82px;
-}
+} */
