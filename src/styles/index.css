@@ -471,6 +471,28 @@ ul {
   overflow-y: auto;
 }
 
+.drinkbook-close-button {
+  background: transparent;
+  border: 1px solid #e62b1e;
+  color: #e62b1e;
+
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.drinkbook-close-button:hover {
+  background: #e62b1e;
+  color: white;
+}
+
 .drinkbook-header {
   display: flex;
   justify-content: space-between;

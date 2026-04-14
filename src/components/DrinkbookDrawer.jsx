@@ -22,8 +22,10 @@ export default function DrinkbookDrawer({ isOpen, onClose }) {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="drinkbook-header">
-          <h2>Drinkbook</h2>
-          <button onClick={onClose}>Close</button>
+            <h2>Drinkbook</h2>
+            <button className="drinkbook-close-button" onClick={onClose}>
+                Close
+            </button>
         </div>
 
         {entries.length === 0 ? (
