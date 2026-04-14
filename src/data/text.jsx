@@ -26,7 +26,14 @@ export const text = {
       designer: "Designers Mix",
     },
     instruction: "Find people with matching colors, you share skills!",
-    question: "Need an ice breaker? Ask what colors are in other peoples drink and start to connect",
-    reset: "Create another mocktail",
-  },
+    iceBreakerTitle: "Need an ice breaker?",
+    iceBreakers: [
+    "How many drinks have you collected in your Drinkbook?",
+    "What colors are in your drink?",
+    "Which skill in your drink describes you best?",
+    "What kind of role are you looking for today?",
+    "Which ingredient did you choose first?",
+    ],
+  reset: "Create another mocktail",
+  }
 };

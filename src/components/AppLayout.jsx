@@ -25,7 +25,7 @@ export default function AppLayout({ children }) {
           className="drinkbook-button"
           onClick={() => setIsDrinkbookOpen(true)}
           >
-          🍸📖 
+          🍹📖 
           <p>
             <small>
               Drinkbook

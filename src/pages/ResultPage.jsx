@@ -7,6 +7,7 @@ import DrinkGlass from "../components/DrinkGlass";
 import AppLayout from "../components/AppLayout";
 import SavePersonForm from "../components/SavePersonForm";
 import { addDrinkbookEntry } from "../utils/drinkbookStorage";
+import DrinkbookStampButton from "../components/DrinkBookStampButton";
 
 
 function getButtonTextColor(backgroundColor) {
@@ -21,6 +22,10 @@ export default function ResultPage() {
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
   const [hasSavedToDrinkbook, setHasSavedToDrinkbook] = useState(false);
+  const [showIceBreaker, setShowIceBreaker] = useState(false);
+  const iceBreakers = text.result.iceBreakers;
+  const randomIceBreaker =
+  iceBreakers[Math.floor(Math.random() * iceBreakers.length)];
   
   if (!userType) {
     return <Navigate to="/" replace />;
@@ -71,7 +76,7 @@ export default function ResultPage() {
     
           <DrinkGlass skills={selectedSkillObjects} track={track} />
 
-          <div>
+            <div>
             <h2>Your selected skillsets:</h2>
             <div className="selected-skills-list">
               {selectedSkillObjects.map((skill) => (
@@ -88,15 +93,33 @@ export default function ResultPage() {
                 </button>
               ))}
             </div>
-          </div>
-          <p><strong>{text.result.question}</strong></p>
-          <p>{text.result.instruction}</p>
+        </div>
+          <p className="result-instruction">
+            {text.result.instruction}
+          </p>
+         <div className="result-actions">
+        <div 
+            className="icebreaker-section">
+        <div
+            className="icebreaker-toggle"
+            onClick={() => setShowIceBreaker((prev) => !prev)}
+            >
+            <strong>Need an ice breaker?</strong>
+            <span className={`arrow ${showIceBreaker ? "open" : ""}`}>▾</span>
+        </div>
 
-          {!hasSavedToDrinkbook && (
-            <button onClick={() => setShowSaveModal(true)}>
-                Save to Drinkbook
-            </button>
-            )}
+    {showIceBreaker && (
+      <div className="icebreaker-box">
+        <p>{randomIceBreaker}</p>
+      </div>
+    )}
+  </div>
+
+  {!hasSavedToDrinkbook && (
+    <DrinkbookStampButton onClick={() => setShowSaveModal(true)} />
+  )}
+</div>
+
 
             {showSaveModal && (
                 <div 
