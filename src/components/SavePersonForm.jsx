@@ -29,7 +29,7 @@ export default function SavePersonForm({ onSave, onCancel }) {
           type="text"
           value={nickname}
           onChange={(event) => setNickname(event.target.value)}
-          placeholder="Write nickname or characteristic"
+          placeholder="Write nickname or characteristics"
         />
       </label>
 
