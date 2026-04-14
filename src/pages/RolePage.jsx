@@ -1,12 +1,15 @@
-
 import { useNavigate, Navigate } from "react-router-dom";
 import { useMingel } from "../context/MingelContext";
 import { text } from "../data/text";
+import { useState } from "react";
 import AppLayout from "../components/AppLayout";
- 
+import RoleButton from "../components/RoleButton";
+import ContinueButton from "../components/ContinueButton";
+
 export default function RolePage() {
   const navigate = useNavigate();
   const { userType, chooseTrack } = useMingel();
+  const [selectedRole, setSelectedRole] = useState(null);
 
   if (!userType) {
     return <Navigate to="/" replace />;
@@ -14,29 +17,45 @@ export default function RolePage() {
 
   const heading =
     userType === "company"
-    ? text.role.companyHeading
-    :text.role.studentHeading;
+      ? text.role.companyHeading
+      : text.role.studentHeading;
 
-  function handleSelect(track) {
-    chooseTrack(track);
+  function handleSelect(type) {
+    setSelectedRole(type);
+  }
+
+  function handleContinue() {
+    chooseTrack(selectedRole);
     navigate("/bygg");
   }
 
   return (
     <AppLayout>
-    <main>
+      <main>
         <h1>{heading}</h1>
-      <p>{text.role.subtitle}:</p>
+        <p>{text.role.subtitle}:</p>
 
-      <button onClick={() => handleSelect("developer")}>
-        {text.role.developer}
-      </button>
+        <RoleButton
+          onSelect={handleSelect}
+          value="developer"
+          selected={selectedRole === "developer"}
+        >
+          {text.role.developer}
+        </RoleButton>
 
-      <button onClick={() => handleSelect("designer")}>
-        {text.role.designer}
-      </button>
-    </main>
+        <RoleButton
+          onSelect={handleSelect}
+          value="designer"
+          selected={selectedRole === "designer"}
+        >
+          {text.role.designer}
+        </RoleButton>
+
+        <ContinueButton
+          disabled={!selectedRole}
+          onContinue={handleContinue}
+        />
+      </main>
     </AppLayout>
   );
 }
-
