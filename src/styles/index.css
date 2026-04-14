@@ -26,6 +26,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  text-align: center;
 
 }
 .result-page {
@@ -408,7 +409,7 @@ ul {
   gap: 6px;
   font-size: 1.1rem;
   padding: 1px 12px;
-  border-radius: 9px;
+  border-radius: 999px;
   border: 2px solid rgb(0, 26, 82);
   background: transparent;
   cursor: pointer;
@@ -569,14 +570,12 @@ ul {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.glass {
-  /* Property 1=card, Property 2=developer drink */
+.devicon {
+  /*devicon*/
 
 position: absolute;
 width: 40px;
 height: 40px;
 left: 16px;
 top: 82px;
-
-
 }
