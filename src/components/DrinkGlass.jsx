@@ -136,22 +136,11 @@ export default function DrinkGlass({ skills, track }) {
           </linearGradient>
         </defs>
 
-        {/* själva vätskan */}
         <path
           d={designerLiquidPath}
           fill="url(#designerDrinkGradient)"
           opacity="0.82"
         />
-
-        {/* vätskans yta */}
-       {/* <ellipse
-          cx="105"
-          cy="74"
-          rx="82"
-          ry="7"
-          fill={colors[2] || "#a6a6a6"}
-          opacity="0.9"
-        />*/}
       </svg>
 
       <img
@@ -161,6 +150,14 @@ export default function DrinkGlass({ skills, track }) {
         aria-hidden="true"
       />
 
+      <div className="designer-bubbles" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <img
         src="/media/Circle.png"
         alt=""
@@ -168,22 +165,20 @@ export default function DrinkGlass({ skills, track }) {
         aria-hidden="true"
       />
 
-      <svg className="drink-highlight-designer.svg" viewBox="0 0 220 320" aria-hidden="true">
-          <path
-            d="
-              M 25 118
-              Q 32 110 100 113
-              L 76 112
-              Q 45 155 56 215
-              Q 42 225 30 149
-              Z
-            "
-            fill="white"
-            opacity="0.40"
-          />
-        </svg>
-
-      
+      <svg className="drink-highlight-designer" viewBox="0 0 220 320" aria-hidden="true">
+        <path
+          d="
+            M 25 118
+            Q 32 110 100 113
+            L 76 112
+            Q 45 155 56 215
+            Q 42 225 30 149
+            Z
+          "
+          fill="white"
+          opacity="0.40"
+        />
+      </svg>
     </div>
   );
 }
