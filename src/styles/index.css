@@ -490,24 +490,40 @@ ul {
   padding: 12px;
 }
 
- .drinkbook-button {
+.drinkbook-button {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 1.1rem;
-  padding: 1px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
   border: 2px solid rgb(0, 26, 82);
   background: transparent;
+  color: #121212;
+  font-family: inherit;
   cursor: pointer;
   position: relative;
   top: 3px;
+
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .drinkbook-button:hover {
   background: rgb(0, 26, 82);
   color: white;
-} 
+}
+
+.drinkbook-button .drinkbook-emoji,
+.drinkbook-button .drinkbook-label {
+  color: inherit;
+}
+
+.drinkbook-label {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
 
 .drinkbook-stamp-button {
   background: transparent;

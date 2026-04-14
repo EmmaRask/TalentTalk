@@ -12,13 +12,9 @@ export default function AppLayout({ children }) {
         <button
           className="drinkbook-button"
           onClick={() => setIsDrinkbookOpen(true)}
-          >
-          🍹📖 
-          <p>
-            <small>
-              Drinkbook
-            </small>
-          </p>
+        >
+          <span className="drinkbook-emoji">🍹📖</span>
+          <span className="drinkbook-label">Drinkbook</span>
         </button>
       </header>
 
