@@ -23,8 +23,10 @@ export default function HomePage() {
   return (
     <AppLayout>
       <main>
-        <h1>{text.home.title}</h1>
-        <p>{text.home.subtitle}</p>
+        <h1 className="app-title">
+          <span className="title-highlight">{text.home.titleAccent}</span>
+          {text.home.titleRest}</h1>
+        <p><strong>{text.home.subtitle}</strong></p>
 
         <RoleButton
           onSelect={handleSelect}

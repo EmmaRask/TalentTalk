@@ -1,6 +1,7 @@
 export const text = {
   home: {
-    title: "TalentTalk",
+    titleAccent: "Talent",
+    titleRest: "Talk",
     subtitle: "Who are you?",
   },
 

@@ -16,7 +16,7 @@ export default function DrinkbookStampButton({ onClick }) {
                 <path
                     id="bottomArc"
                     d="M 12,60 
-                    A 40,40 0 0,0 100,60"
+                    A 40,40 0 0,0 109,60"
                 />
             </defs>
 

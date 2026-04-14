@@ -33,7 +33,7 @@ export default function RolePage() {
     <AppLayout>
       <main>
         <h1>{heading}</h1>
-        <p>{text.role.subtitle}:</p>
+        <p><strong>{text.role.subtitle}:</strong></p>
 
         <RoleButton
           onSelect={handleSelect}
