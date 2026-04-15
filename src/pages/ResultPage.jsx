@@ -44,8 +44,8 @@ export default function ResultPage() {
     id: crypto.randomUUID(),
     nickname: formData.nickname,
     note: formData.note,
-    track,
-    skills: selectedSkills,
+    track: formData.track,
+    skills: formData.skills,
     createdAt: new Date().toISOString(),
   };
 
@@ -59,6 +59,7 @@ export default function ResultPage() {
     setSaveMessage("");
   }, 2500);
 }
+
 
   function handleReset() {
     restartFromRole();

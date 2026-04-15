@@ -33,7 +33,7 @@ export const text = {
     "What colors are in your drink?",
     "Which skill in your drink describes you best?",
     "What kind of role are you looking for today?",
-    "Which ingredient did you choose first?",
+    "Can I see your mocktail please?",
     ],
   reset: "Create another mocktail",
   }
